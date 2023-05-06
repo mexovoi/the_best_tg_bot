@@ -3,10 +3,10 @@ from aiogram import Bot, Dispatcher
 
 import sending_messages
 from parsing import parser
-from config import TOKEN
+import os
 from handlers import main_menu_handler, news_handler, stocks_handler, notifications_handler
 
-tg_bot = Bot(token=TOKEN)
+tg_bot = Bot(token = os.environ.get('TOKEN'))
 dp = Dispatcher()
 
 # Запуск бота
